@@ -14,7 +14,7 @@ The python file takes a webpage as an input and displays the title of the webpag
 
 ## Installation Requirements
 
-* Docker should be installed on your system. Visit docs.docker.com/get-docker/ for more info.
+* Docker should be installed on your system. Visit [Docker Webpage](docs.docker.com/get-docker/) for more info.
 
 ## Steps to Run
 
@@ -22,5 +22,5 @@ The python file takes a webpage as an input and displays the title of the webpag
 * Navigate to the directory using CLI.
 * To build the Docker image: **docker build -t web-scrapper --rm .**
 * There are two methods to run the Docker image:
-    * Default (Website used: google.com) : **docker run web-scrapper**
-    * Dynamic (Website used: user-provided): **docker run web-scrapper webpage-link**
+    * _Default (Website used: google.com) : **docker run web-scrapper**_
+    * _Dynamic (Website used: user-provided): **docker run web-scrapper webpage-link**_
