@@ -14,7 +14,7 @@ The python file takes a webpage as an input and displays the title of the webpag
 
 ## Installation Requirements
 
-* Docker should be installed on your system. Visit [Docker Webpage](docs.docker.com/get-docker/) for more info.
+* Docker should be installed on your system. Visit [get-docker](https://docs.docker.com/get-docker/) for more info.
 
 ## Steps to Run
 
