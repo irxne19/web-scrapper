@@ -1,22 +1,18 @@
-pipeline {
-    agent any
- stages {
-  stage('Docker Build and Tag') {
-           steps {
-              
-                sh 'docker build -t web-scrapper:latest .' 
-                  sh 'docker tag web-scrapper irene19bce2479/web_scrapper_main:latest'               
-          }
-        }
-     
-  stage('Publish image to Docker Hub') {
-          
-            steps {
-        withDockerRegistry([ credentialsId: "irene19bce2479", url: "" ]) {
-          sh  'docker push irene19bce2479/web_scrapper_main:latest'
-        }
-                  
-          }
-        }
-  }
-}
+node {
+	def app
+	def image = 'registry.hub.docker.com/irene19bce2479/web-scrapper'
+	def branch = 'main'
+		stage('Clone repository') {               
+	    	git branch: branch,
+	        	credentialsId: 'github',
+	        	url: 'https://github.com/irxne19/web-scrapper.git'
+	    }
+	    stage('Build Image') {
+			app = docker.build image
+	    }
+	    
+	    stage('Push') {
+	    	docker.withRegistry('https://registry.hub.docker.com', 'irene19bce2479') {            
+				app.push("${env.BUILD_NUMBER}")
+	        }    
+	    }
