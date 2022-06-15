@@ -5,7 +5,7 @@ pipeline {
            steps {
               
                 sh 'docker build -t web-scrapper:latest .' 
-                  sh 'docker tag web-scrapper kristendocker/web-scrapper:latest'               
+                  sh 'docker tag web-scrapper irene19bce2479/web_scrapper_main:latest'               
           }
         }
      
@@ -13,7 +13,7 @@ pipeline {
           
             steps {
         withDockerRegistry([ credentialsId: "docker-hub", url: "" ]) {
-          sh  'docker push kristendocker/web-scrapper:latest'
+          sh  'docker push irene19bce2479/web_scrapper_main:latest'
         }
                   
           }
