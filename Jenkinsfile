@@ -12,7 +12,7 @@ pipeline {
   stage('Publish image to Docker Hub') {
           
             steps {
-        withDockerRegistry([ credentialsId: "docker-hub", url: "" ]) {
+        withDockerRegistry([ credentialsId: "irene19bce2479", url: "" ]) {
           sh  'docker push irene19bce2479/web_scrapper_main:latest'
         }
                   
